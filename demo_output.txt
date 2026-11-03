@@ -1,0 +1,22 @@
+TRIP COPILOT demo  |  start 10:00 at Pune station  |  stops: Shaniwar Wada, Aga Khan Palace, Kelkar Museum, Tulshibaug, Bund Garden, Katraj Zoo
+
+OPTIMISED PLAN (M2, time-dependent, opening windows respected)
+#  Stop                  Leave  Drive    Arrive  Visit        Window       ETA tag
+1  Bund Garden           10:00     6 min  10:06   10:06-10:51  06:00-20:00  PREDICTED
+2  Aga Khan Palace       10:51    11 min  11:02   11:02-12:02  09:00-17:30  PREDICTED
+3  Katraj Zoo            12:02    47 min  12:49   12:49-14:49  09:30-17:30  PREDICTED
+4  Kelkar Museum         14:49    27 min  15:16   15:16-16:31  09:30-17:30  PREDICTED
+5  Shaniwar Wada         16:31     5 min  16:36   16:36-17:36  08:00-18:00  PREDICTED
+6  Tulshibaug            17:36     5 min  17:41   17:41-18:11  07:00-21:00  PREDICTED
+
+In-vehicle time: 101 min, stops missed: 0   |   manual nearest-next: 74 min, stops missed: 1
+
+WHY THIS ORDER (M4 - every number below comes from the solver, not from a language model)
+- Nearest-next would go: Bund Garden > Aga Khan Palace > Shaniwar Wada > Kelkar Museum > Tulshibaug > Katraj Zoo
+- Rejected: reaching Katraj Zoo at 15:44 cannot fit its visit before the 17:30 closing time.
+- Chosen order visits 1 more stop(s) (+27 min in vehicle).
+
+LIVE RE-PLAN (M4) - simulated disruption: first leg runs 25 min late
+- Clock 11:16 after Bund Garden. Remaining plan was: Aga Khan Palace > Katraj Zoo > Kelkar Museum > Shaniwar Wada > Tulshibaug
+- Re-optimised from the actual clock: Aga Khan Palace > Shaniwar Wada > Kelkar Museum > Katraj Zoo > Tulshibaug
+- Order changed; the change is explained to the user.
